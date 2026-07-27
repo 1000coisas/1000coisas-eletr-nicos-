@@ -33,7 +33,14 @@
     <section id="produto-destaque" class="section section-featured">
       <div class="container featured-grid">
         <div class="featured-media">
-          <img src="https://via.placeholder.com/800x500.png?text=Kaidi+777" alt="Kaidi 777" />
+          <div class="main-image">
+            <img id="mainProductImage" src="https://via.placeholder.com/800x500.png?text=Kaidi+777" alt="Kaidi 777" />
+          </div>
+          <div class="thumbs">
+            <img class="thumb" src="https://via.placeholder.com/240x150.png?text=Kaidi+777+1" data-large="https://via.placeholder.com/800x500.png?text=Kaidi+777+1" alt="Kaidi 777 foto 1" />
+            <img class="thumb" src="https://via.placeholder.com/240x150.png?text=Kaidi+777+2" data-large="https://via.placeholder.com/800x500.png?text=Kaidi+777+2" alt="Kaidi 777 foto 2" />
+            <img class="thumb" src="https://via.placeholder.com/240x150.png?text=Kaidi+777+3" data-large="https://via.placeholder.com/800x500.png?text=Kaidi+777+3" alt="Kaidi 777 foto 3" />
+          </div>
         </div>
         <div class="featured-copy">
           <span class="eyebrow">Produto campeão</span>
@@ -92,5 +99,20 @@
       <p>1000coisas eletrônicos &copy; 2026</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const thumbs = document.querySelectorAll('.thumb');
+      const main = document.getElementById('mainProductImage');
+      thumbs.forEach(t => {
+        t.addEventListener('click', () => {
+          const large = t.dataset.large || t.src;
+          main.src = large;
+          thumbs.forEach(x => x.classList.remove('active'));
+          t.classList.add('active');
+        });
+      });
+      if (thumbs[0]) thumbs[0].classList.add('active');
+    });
+  </script>
 </body>
 </html>

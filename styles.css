@@ -159,6 +159,43 @@ body {
   margin-top: 1.5rem;
 }
 
+.featured-media .main-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  display: block;
+  object-fit: cover;
+}
+
+.thumbs {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.thumb {
+  width: 120px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.thumb.active {
+  border-color: var(--accent);
+}
+
+@media (max-width: 880px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+  .thumb {
+    width: 90px;
+    height: 56px;
+  }
+}
+
 .contact-buttons {
   display: flex;
   flex-wrap: wrap;
