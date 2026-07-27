@@ -3,116 +3,328 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>1000coisas eletrônicos</title>
+  <title>1000coisas eletrônicos - Loja Online</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
-    <div class="container">
+    <div class="container header-content">
       <div class="brand">
-        <h1>1000coisas eletrônicos</h1>
-        <p>Tudo que você busca, está aqui!</p>
+        <h1>1000coisas <span>eletrônicos</span></h1>
+        <p>Tecnologia de qualidade com os melhores preços</p>
+      </div>
+      <div class="header-actions">
+        <input type="text" class="search-box" placeholder="Buscar produtos..." id="searchInput">
+        <button class="search-btn"><i class="fas fa-search"></i></button>
       </div>
       <nav class="main-nav">
         <a href="#produtos">Produtos</a>
+        <a href="#categorias">Categorias</a>
         <a href="#sobre">Sobre</a>
+        <a href="#faq">FAQ</a>
         <a href="#contato">Contato</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-content">
-        <h2>Peças, componentes e soluções para seus projetos eletrônicos</h2>
-        <p>Encontre componentes, ferramentas e acessórios para criar, consertar e inovar em eletrônica.</p>
-        <a class="button" href="#produto-destaque">Ver produto campeão</a>
-      </div>
-    </section>
+  <!-- Banner Principal -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <h2>Kaidi 777</h2>
+      <p>Produto destaque com fotos exclusivas e uma apresentação simples, profissional e voltada para vendas.</p>
+      <a href="#produtos" class="button button-primary">Comprar Agora</a>
+    </div>
+    <div class="hero-image">
+      <img src="foto1.jpeg" alt="Kaidi 777">
+    </div>
+  </section>
 
-    <section id="produto-destaque" class="section section-featured">
-      <div class="container featured-grid">
-        <div class="featured-media">
-          <div class="main-image">
-            <img id="mainProductImage" src="https://via.placeholder.com/800x500.png?text=Kaidi+777" alt="Kaidi 777" />
-          </div>
-          <div class="thumbs">
-            <img class="thumb" src="https://via.placeholder.com/240x150.png?text=Kaidi+777+1" data-large="https://via.placeholder.com/800x500.png?text=Kaidi+777+1" alt="Kaidi 777 foto 1" />
-            <img class="thumb" src="https://via.placeholder.com/240x150.png?text=Kaidi+777+2" data-large="https://via.placeholder.com/800x500.png?text=Kaidi+777+2" alt="Kaidi 777 foto 2" />
-            <img class="thumb" src="https://via.placeholder.com/240x150.png?text=Kaidi+777+3" data-large="https://via.placeholder.com/800x500.png?text=Kaidi+777+3" alt="Kaidi 777 foto 3" />
-          </div>
-        </div>
-        <div class="featured-copy">
-          <span class="eyebrow">Produto campeão</span>
-          <h3>Kaidi 777</h3>
-          <p>O Kaidi 777 é um aparelho campeão de vendas, projetado para comunicação eficiente e uso profissional. Ele combina alcance, robustez e recursos inteligentes para quem precisa de um produto confiável.</p>
-          <ul class="features-list">
-            <li>Comunicação de longo alcance com sinal estável</li>
-            <li>Display iluminado e teclado de fácil uso</li>
-            <li>Bateria de longa duração para jornadas extensas</li>
-            <li>Construção resistente para ambientes exigentes</li>
-          </ul>
-          <a class="button featured-button" href="#contato">Quero comprar</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="produtos" class="section container">
-      <h3>O que oferecemos</h3>
-      <div class="cards">
-        <article class="card">
-          <h4>Componentes eletrônicos</h4>
-          <p>Resistores, capacitores, transistores, módulos e muito mais para seu projeto.</p>
-        </article>
-        <article class="card">
-          <h4>Placas e prototipagem</h4>
-          <p>Arduinos, ESPs, protoboards e painéis para prototipar com rapidez.</p>
-        </article>
-        <article class="card">
-          <h4>Ferramentas e acessórios</h4>
-          <p>Soldadores, multímetros, cabos e tudo o que você precisa para montar com qualidade.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="sobre" class="section section-secondary">
-      <div class="container">
-        <h3>Sobre a 1000coisas eletrônicos</h3>
-        <p>Somos uma comunidade de amantes da eletrônica que busca facilitar o acesso a componentes e conhecimento técnico. Aqui você encontra inspiração e suporte para executar seus projetos com confiança.</p>
-      </div>
-    </section>
-
-    <section id="contato" class="section container">
-      <h3>Entre em contato</h3>
-      <p>Tem algo em mente? Conte com a gente para ajudar a encontrar a peça certa ou tirar dúvidas técnicas.</p>
-      <p>Email: <a href="mailto:contato@1000coisaseletronicos.com.br">contato@1000coisaseletronicos.com.br</a></p>
-      <div class="contact-buttons">
-        <a class="button whatsapp-button" href="https://wa.me/5511984942888?text=Olá%20da%201000coisas%20eletrônicos!%20Quero%20saber%20mais%20sobre%20seus%20produtos." aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener noreferrer">📱</a>
-        <a class="button instagram-button" href="https://www.instagram.com/1000coisaseletronicos" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">📸</a>
-        <a class="button maps-button" href="https://www.google.com/maps/search/?api=1&query=1000coisas+eletrônicos" aria-label="Maps" title="Maps" target="_blank" rel="noopener noreferrer">🗺️</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
+  <!-- Produto Único -->
+  <section id="categorias" class="categorias-section">
     <div class="container">
-      <p>1000coisas eletrônicos &copy; 2026</p>
+      <h3>Kaidi 777</h3>
+      <div class="categorias-grid single-category-grid">
+        <div class="categoria-card" data-category="kaidi777">
+          <i class="fas fa-mobile-alt"></i>
+          <h4>Produto exclusivo</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produtos Destaque -->
+  <section id="produto-destaque" class="section section-featured">
+    <div class="container featured-grid">
+      <div class="featured-media">
+        <div class="main-image">
+          <img id="mainProductImage" src="foto1.jpeg" alt="Kaidi 777" />
+          <span class="promo-badge">Em Oferta</span>
+        </div>
+        <div class="thumbs">
+          <img class="thumb" src="foto1.jpeg" data-large="foto1.jpeg" alt="Kaidi 777 foto 1" />
+          <img class="thumb" src="foto2.jpeg" data-large="foto2.jpeg" alt="Kaidi 777 foto 2" />
+          <img class="thumb" src="foto3.jpeg" data-large="foto3.jpeg" alt="Kaidi 777 foto 3" />
+        </div>
+      </div>
+      <div class="featured-copy">
+        <span class="eyebrow">Produto Destaque</span>
+        <h3>Kaidi 777</h3>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <span>(248 avaliações)</span>
+        </div>
+        <p class="product-description">O Kaidi 777 é um aparelho campeão de vendas, projetado para comunicação eficiente e uso profissional. Ele combina alcance, robustez e recursos inteligentes para quem precisa de um produto confiável.</p>
+        
+        <div class="product-info">
+          <div class="price-section">
+            <span class="price-old">R$ 299,90</span>
+            <span class="price-current">R$ 199,90</span>
+            <span class="discount">-33%</span>
+          </div>
+          <div class="installment">
+            <p>ou em até <strong>12x de R$ 16,66</strong> sem juros</p>
+          </div>
+          <div class="stock">
+            <p>⚠️ Restam apenas <strong>8 unidades</strong></p>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li><i class="fas fa-check"></i> Comunicação de longo alcance com sinal estável</li>
+          <li><i class="fas fa-check"></i> Display iluminado e teclado de fácil uso</li>
+          <li><i class="fas fa-check"></i> Bateria de longa duração para jornadas extensas</li>
+          <li><i class="fas fa-check"></i> Construção resistente para ambientes exigentes</li>
+        </ul>
+
+        <a class="button featured-button" href="https://wa.me/5511984942888?text=Olá!%20Quero%20comprar%20o%20Kaidi%20777" target="_blank">
+          <i class="fab fa-whatsapp"></i> Comprar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por que comprar conosco -->
+  <section id="sobre" class="section beneficios-section">
+    <div class="container">
+      <h3>Por Que Comprar Conosco?</h3>
+      <div class="beneficios-grid">
+        <div class="beneficio-card">
+          <i class="fas fa-truck"></i>
+          <h4>Enviamos para todo o Brasil</h4>
+          <p>Entrega rápida e segura em qualquer lugar do país</p>
+        </div>
+        <div class="beneficio-card">
+          <i class="fas fa-lock"></i>
+          <h4>Compra 100% Segura</h4>
+          <p>Seus dados estão protegidos com criptografia SSL</p>
+        </div>
+        <div class="beneficio-card">
+          <i class="fas fa-credit-card"></i>
+          <h4>Múltiplas Formas de Pagamento</h4>
+          <p>Pix, Cartão de Crédito e Boleto</p>
+        </div>
+        <div class="beneficio-card">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Produtos com Garantia</h4>
+          <p>Todos os nossos produtos têm garantia do fabricante</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produtos -->
+  <section id="produtos" class="section produtos-section">
+    <div class="container">
+      <h3>Kaidi 777</h3>
+      <p class="section-subtitle">Apresentação focada em um único produto, com as fotos enviadas e o destaque principal da página.</p>
+      <div class="produtos-grid single-product-grid">
+        <article class="product-card single-product-card" data-category="kaidi777">
+          <div class="product-image">
+            <img src="foto1.jpeg" alt="Kaidi 777">
+            <span class="promo-badge">Em Oferta</span>
+          </div>
+          <div class="product-body">
+            <h4>Kaidi 777</h4>
+            <div class="rating-small">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <div class="product-price">
+              <span class="price-old">R$ 299,90</span>
+              <span class="price">R$ 199,90</span>
+            </div>
+            <p class="installment-text">12x sem juros</p>
+            <button class="btn-whatsapp" data-product="Kaidi 777">
+              <i class="fab fa-whatsapp"></i> Comprar
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avaliações -->
+  <section id="avaliacoes" class="section avaliacoes-section">
+    <div class="container">
+      <h3>Avaliações dos Clientes</h3>
+      <div class="avaliacoes-grid">
+        <div class="avaliacao-card">
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h5>Excelente produto!</h5>
+          <p>"Chegou rápido e o produto é de excelente qualidade. Recomendo!"</p>
+          <small>João Silva - São Paulo</small>
+        </div>
+        <div class="avaliacao-card">
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <h5>Muito bom!</h5>
+          <p>"Bom atendimento e entrega rápida. Voltarei a comprar com certeza!"</p>
+          <small>Maria Santos - Rio de Janeiro</small>
+        </div>
+        <div class="avaliacao-card">
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h5>Perfeito!</h5>
+          <p>"Produto exatamente como descrito. Entrega dentro do prazo. Adorei!"</p>
+          <small>Carlos Oliveira - Minas Gerais</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section faq-section">
+    <div class="container">
+      <h3>Perguntas Frequentes</h3>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Como funciona o envio?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Oferecemos envio por correios, transportadora ou retirada em loja. Você escolhe a melhor opção na finalização da compra.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Qual é o prazo de entrega?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>O prazo varia de 3 a 10 dias úteis, dependendo da sua região e do meio de transporte escolhido.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Os produtos possuem garantia?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Sim! Todos os nossos produtos contam com a garantia do fabricante, que varia de 12 a 24 meses.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Quais formas de pagamento são aceitas?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Aceitamos Pix, Cartão de Crédito (parcelado até 12x) e Boleto Bancário.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="section contato-section">
+    <div class="container">
+      <h3>Entre em Contato</h3>
+      <p>Tem algo em mente? Conte com a gente para ajudar a encontrar a peça certa ou tirar dúvidas técnicas.</p>
+      <div class="contact-buttons">
+        <a class="button button-whatsapp" href="https://wa.me/5511984942888?text=Olá%20da%201000coisas%20eletrônicos!%20Quero%20saber%20mais%20sobre%20seus%20produtos." target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/200px-WhatsApp.svg.png" alt="WhatsApp">
+          WhatsApp
+        </a>
+        <a class="button button-instagram" href="https://www.instagram.com/1000coisaseletronicos" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo.svg/200px-Instagram_logo.svg.png" alt="Instagram">
+          Instagram
+        </a>
+        <a class="button button-email" href="mailto:contato@1000coisaseletronicos.com.br">
+          <i class="fas fa-envelope"></i>
+          Email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>1000coisas eletrônicos</h4>
+        <p>Sua loja de confiança para tecnologia de qualidade.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#categorias">Categorias</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5511984942888" target="_blank">WhatsApp: (11) 98494-2888</a></li>
+          <li><a href="mailto:contato@1000coisaseletronicos.com.br">Email: contato@1000coisaseletronicos.com.br</a></li>
+          <li><a href="https://1000coisas.eletronicos.com.br" target="_blank">Site: 1000coisas.eletronicos.com.br</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#privacidade">Política de Privacidade</a></li>
+          <li><a href="#termos">Termos de Uso</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 1000coisas eletrônicos. Todos os direitos reservados.</p>
     </div>
   </footer>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const thumbs = document.querySelectorAll('.thumb');
-      const main = document.getElementById('mainProductImage');
-      thumbs.forEach(t => {
-        t.addEventListener('click', () => {
-          const large = t.dataset.large || t.src;
-          main.src = large;
-          thumbs.forEach(x => x.classList.remove('active'));
-          t.classList.add('active');
-        });
-      });
-      if (thumbs[0]) thumbs[0].classList.add('active');
-    });
-  </script>
+
+  <!-- Botão Voltar ao Topo -->
+  <button class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
 </body>
 </html>

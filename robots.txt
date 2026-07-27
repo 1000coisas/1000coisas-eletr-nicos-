@@ -7,7 +7,10 @@ Disallow: /admin
 Disallow: /private
 
 # Sitemap
-Sitemap: https://1000coisas-eletronicos.com/sitemap.xml
+Sitemap: https://1000coisas.eletronicos.com.br/sitemap.xml
+
+# Host (endereço principal do site)
+Host: https://1000coisas.eletronicos.com.br
 
 # Delay entre requisições (em segundos)
 Crawl-delay: 1
