@@ -108,6 +108,16 @@ body {
   transform: translateY(-1px);
 }
 
+.whatsapp-button {
+  margin-top: 1rem;
+  background: #25d366;
+  color: #0f172a;
+}
+
+.whatsapp-button:hover {
+  background: #1ebe5d;
+}
+
 .section {
   padding: 4rem 0;
 }
