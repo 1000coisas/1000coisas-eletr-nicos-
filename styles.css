@@ -108,14 +108,43 @@ body {
   transform: translateY(-1px);
 }
 
-.whatsapp-button {
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   margin-top: 1rem;
+}
+
+.contact-buttons .button {
+  min-width: 160px;
+  text-align: center;
+}
+
+.whatsapp-button {
   background: #25d366;
   color: #0f172a;
 }
 
 .whatsapp-button:hover {
   background: #1ebe5d;
+}
+
+.instagram-button {
+  background: #e1306c;
+  color: #ffffff;
+}
+
+.instagram-button:hover {
+  background: #c1275b;
+}
+
+.maps-button {
+  background: #0ea5e9;
+  color: #0f172a;
+}
+
+.maps-button:hover {
+  background: #0284c7;
 }
 
 .section {
