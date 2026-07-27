@@ -1,0 +1,13 @@
+# Arquivo robots.txt para 1000coisas eletrônicos
+# Permite que mecanismos de busca indexem o site
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+
+# Sitemap
+Sitemap: https://1000coisas-eletronicos.com/sitemap.xml
+
+# Delay entre requisições (em segundos)
+Crawl-delay: 1

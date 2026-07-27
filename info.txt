@@ -1,0 +1,26 @@
+1000COISAS ELETRÔNICOS - INFORMAÇÕES DO SITE
+============================================
+
+NOME DA EMPRESA: 1000coisas eletrônicos
+SLOGAN: Tudo que você busca, está aqui!
+
+DESCRIÇÃO:
+Loja online especializada em componentes eletrônicos, placas de prototipagem e ferramentas para projetos eletrônicos.
+
+PRODUTOS PRINCIPAIS:
+- Componentes eletrônicos (resistores, capacitores, transistores, módulos)
+- Placas e prototipagem (Arduinos, ESPs, protoboards)
+- Ferramentas e acessórios (soldadores, multímetros, cabos)
+
+SEÇÕES DO SITE:
+- Página inicial: Hero com chamada para ação
+- Produtos: Categorias de produtos oferecidos
+- Sobre: Informações sobre a empresa
+- Contato: Formulário de contato
+
+TECNOLOGIAS UTILIZADAS:
+- HTML5
+- CSS3
+- Layout responsivo
+
+DATA DE CRIAÇÃO: 2026-07-27
