@@ -1,170 +1,132 @@
-// ===== GALERIA DE PRODUTOS ===== 
-document.addEventListener('DOMContentLoaded', function () {
-  // Galeria principal
-  const thumbs = document.querySelectorAll('.thumb');
-  const main = document.getElementById('mainProductImage');
-  
-  if (thumbs && main) {
-    thumbs.forEach(t => {
-      t.addEventListener('click', () => {
-        const large = t.dataset.large || t.src;
-        main.src = large;
-        thumbs.forEach(x => x.classList.remove('active'));
-        t.classList.add('active');
-      });
-    });
-    if (thumbs[0]) thumbs[0].classList.add('active');
-  }
+const heroMainImage = document.getElementById('heroMainImage');
+const thumbButtons = document.querySelectorAll('.thumb');
+const galleryItems = document.querySelectorAll('.gallery-item');
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.querySelector('.lightbox-image');
+const lightboxClose = document.querySelector('.lightbox-close');
+const lightboxNext = document.querySelector('.lightbox-next');
+const lightboxPrev = document.querySelector('.lightbox-prev');
+const faqQuestions = document.querySelectorAll('.faq-question');
+const backToTopBtn = document.getElementById('backToTop');
+const searchInput = document.getElementById('searchInput');
+const searchBtn = document.querySelector('.search-btn');
 
-  // ===== FAQ ACCORDION =====
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  
+let galleryImages = ['./foto1.jpeg', './foto2.jpeg', './foto3.jpeg'];
+let currentLightboxIndex = 0;
+
+const initGallery = () => {
+  thumbButtons.forEach((thumb, index) => {
+    thumb.addEventListener('click', () => {
+      const selected = thumb.dataset.image;
+      heroMainImage.src = selected;
+      thumbButtons.forEach(button => button.classList.remove('active'));
+      thumb.classList.add('active');
+    });
+  });
+
+  galleryItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      const selected = item.dataset.image;
+      openLightbox(index, selected);
+    });
+  });
+};
+
+const openLightbox = (index, image) => {
+  currentLightboxIndex = index;
+  lightboxImage.src = image;
+  lightbox.classList.add('show');
+  document.body.style.overflow = 'hidden';
+};
+
+const closeLightbox = () => {
+  lightbox.classList.remove('show');
+  document.body.style.overflow = '';
+};
+
+const showNextImage = () => {
+  currentLightboxIndex = (currentLightboxIndex + 1) % galleryImages.length;
+  lightboxImage.src = galleryImages[currentLightboxIndex];
+};
+
+const showPrevImage = () => {
+  currentLightboxIndex = (currentLightboxIndex - 1 + galleryImages.length) % galleryImages.length;
+  lightboxImage.src = galleryImages[currentLightboxIndex];
+};
+
+const initFAQ = () => {
   faqQuestions.forEach(question => {
-    question.addEventListener('click', function () {
-      const faqItem = this.parentElement;
-      faqItem.classList.toggle('active');
+    question.addEventListener('click', () => {
+      const item = question.parentElement;
+      item.classList.toggle('active');
     });
   });
+};
 
-  // ===== BUSCA DE PRODUTOS =====
-  const searchInput = document.getElementById('searchInput');
-  const searchBtn = document.querySelector('.search-btn');
-  
-  if (searchInput && searchBtn) {
-    const performSearch = () => {
-      const searchTerm = searchInput.value.toLowerCase();
-      const products = document.querySelectorAll('.product-card');
-      
-      products.forEach(product => {
-        const productName = product.querySelector('h4').textContent.toLowerCase();
-        if (productName.includes(searchTerm)) {
-          product.classList.remove('hidden');
-        } else {
-          product.classList.add('hidden');
-        }
-      });
-    };
-    
-    searchBtn.addEventListener('click', performSearch);
-    searchInput.addEventListener('keyup', performSearch);
-  }
-
-  // ===== FILTRO DE CATEGORIAS =====
-  const filtros = document.querySelectorAll('.filtro-btn');
-  const products = document.querySelectorAll('.product-card');
-  
-  filtros.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Remove classe active de todos
-      filtros.forEach(b => b.classList.remove('active'));
-      // Adiciona active ao clicado
-      btn.classList.add('active');
-      
-      const filter = btn.getAttribute('data-filter');
-      
-      products.forEach(product => {
-        const category = product.getAttribute('data-category');
-        
-        if (filter === 'todos' || category === filter) {
-          product.classList.remove('hidden');
-        } else {
-          product.classList.add('hidden');
-        }
-      });
-    });
-  });
-
-  // ===== BOTÕES DE COMPRA WHATSAPP =====
-  const whatsappButtons = document.querySelectorAll('.btn-whatsapp');
-  const whatsappNumber = '5511984942888';
-  
-  whatsappButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const productName = btn.getAttribute('data-product');
-      const message = `Olá! Gostaria de comprar: ${productName}`;
-      const encodedMessage = encodeURIComponent(message);
-      window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
-    });
-  });
-
-  // ===== BOTÃO VOLTAR AO TOPO =====
-  const backToTopBtn = document.getElementById('backToTop');
-  
+const initBackToTop = () => {
   window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
+    if (window.scrollY > 320) {
       backToTopBtn.classList.add('show');
     } else {
       backToTopBtn.classList.remove('show');
     }
   });
-  
-  if (backToTopBtn) {
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  }
 
-  // ===== CATEGORIAS CLICÁVEIS =====
-  const categoriasCards = document.querySelectorAll('.categoria-card');
-  
-  categoriasCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const category = card.getAttribute('data-category');
-      const filterBtn = document.querySelector(`[data-filter="${category}"]`);
-      
-      if (filterBtn) {
-        filterBtn.click();
-      }
-      
-      // Scroll para seção de produtos
-      document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
-    });
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+};
+
+const initSearch = () => {
+  if (!searchInput || !searchBtn) return;
+  searchBtn.addEventListener('click', () => {
+    searchInput.focus();
+  });
+};
+
+const initLightboxControls = () => {
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightboxNext) lightboxNext.addEventListener('click', showNextImage);
+  if (lightboxPrev) lightboxPrev.addEventListener('click', showPrevImage);
+
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
   });
 
-  // ===== ANIMAÇÃO AO ROLAR A PÁGINA =====
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-  };
-  
-  const observer = new IntersectionObserver((entries) => {
+  document.addEventListener('keydown', (event) => {
+    if (!lightbox.classList.contains('show')) return;
+    if (event.key === 'Escape') closeLightbox();
+    if (event.key === 'ArrowRight') showNextImage();
+    if (event.key === 'ArrowLeft') showPrevImage();
+  });
+};
+
+const initAnimations = () => {
+  const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'none';
         observer.unobserve(entry.target);
       }
     });
-  }, observerOptions);
-  
-  // Observar cards de produtos
-  products.forEach(product => {
-    product.style.opacity = '0';
-    observer.observe(product);
-  });
+  }, { threshold: 0.2 });
 
-  // Observar cards de benefícios
-  const beneficioCards = document.querySelectorAll('.beneficio-card');
-  beneficioCards.forEach(card => {
-    observer.observe(card);
+  document.querySelectorAll('.benefit-card, .review-card, .gallery-item, .faq-item, .contact-card').forEach(element => {
+    element.style.opacity = 0;
+    element.style.transform = 'translateY(28px)';
+    element.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    observer.observe(element);
   });
+};
 
-  // ===== PREVENÇÃO DE MÚLTIPLOS CLIQUES =====
-  document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('btn-whatsapp')) {
-      e.target.disabled = true;
-      setTimeout(() => {
-        e.target.disabled = false;
-      }, 1000);
-    }
-  });
+const init = () => {
+  initGallery();
+  initFAQ();
+  initBackToTop();
+  initSearch();
+  initLightboxControls();
+  initAnimations();
+};
 
-  // ===== CARREGAMENTO SUAVE =====
-  document.body.style.opacity = '0';
-  setTimeout(() => {
-    document.body.style.transition = 'opacity 0.5s ease';
-    document.body.style.opacity = '1';
-  }, 100);
-});
+window.addEventListener('DOMContentLoaded', init);
